@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Bank Account Manager</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -10,9 +10,7 @@
   <div class="container">
     <h1>Bank Account Manager</h1>
 
-    <div class="balance-box">
-      <p id="balance">Current balance: $0</p>
-    </div>
+    <div class="balance-box" id="balance">Current balance: $0</div>
 
     <div class="actions">
       <div class="form-group">
@@ -26,12 +24,25 @@
         <input type="number" id="withdrawAmount" placeholder="Enter amount" />
         <button id="withdrawBtn">Withdraw</button>
       </div>
+
+      <div class="form-group">
+        <label for="transferAmount">Transfer Amount</label>
+        <input type="number" id="transferAmount" placeholder="Enter amount" />
+        <label for="transferTarget">Transfer To</label>
+        <input type="text" id="transferTarget" placeholder="Recipient name" />
+        <button id="transferBtn">Transfer</button>
+      </div>
     </div>
 
     <div class="transactions">
       <h2>Transactions</h2>
-      <button id="listDepositsBtn">Show Deposits</button>
+      <div class="buttons-row">
+        <button id="listDepositsBtn">Show Deposits</button>
+        <button id="listWithdrawalsBtn">Show Withdrawals</button>
+        <button id="showSummaryBtn">Show Monthly Summary</button>
+      </div>
       <ul id="transactionsList"></ul>
+      <pre id="summaryBox" class="summary-box" hidden></pre>
     </div>
   </div>
 
